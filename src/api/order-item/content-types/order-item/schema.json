@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_items",
+  "info": {
+    "singularName": "order-item",
+    "pluralName": "order-items",
+    "displayName": "Одиниця замовлення",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "integer",
+      "default": 1
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "plastic": {
+      "type": "enumeration",
+      "enum": [
+        "CoPET",
+        "PLA"
+      ]
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "color": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::color.color"
+    },
+    "variant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::variant.variant"
+    }
+  }
+}

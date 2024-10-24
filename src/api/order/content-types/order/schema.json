@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Замовлення"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "region": {
+      "type": "string",
+      "required": true
+    },
+    "locality": {
+      "type": "string",
+      "required": true
+    },
+    "comment": {
+      "type": "text"
+    },
+    "EDRPOY_CODE": {
+      "type": "string",
+      "required": false
+    },
+    "legal_entity": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "floor": {
+      "type": "string"
+    },
+    "house": {
+      "type": "string"
+    },
+    "appartment": {
+      "type": "string"
+    },
+    "delivery_type": {
+      "type": "string",
+      "required": true
+    },
+    "payment_type": {
+      "type": "string",
+      "required": true
+    },
+    "department_adress": {
+      "type": "string"
+    },
+    "total_price": {
+      "type": "biginteger",
+      "required": true
+    },
+    "total_items": {
+      "type": "biginteger",
+      "required": true
+    },
+    "current_status": {
+      "type": "enumeration",
+      "enum": [
+        "ОБРОБЛЮЄТЬСЯ",
+        "ВИКОНАНО"
+      ]
+    }
+  }
+}

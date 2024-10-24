@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teg_novinis",
+  "info": {
+    "singularName": "teg-novini",
+    "pluralName": "teg-novinis",
+    "displayName": "Тег Новини"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "news": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::new.new",
+      "mappedBy": "tag"
+    }
+  }
+}

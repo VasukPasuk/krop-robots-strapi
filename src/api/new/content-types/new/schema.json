@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "singularName": "new",
+    "pluralName": "news",
+    "displayName": "Новина"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::teg-novini.teg-novini",
+      "inversedBy": "news"
+    },
+    "main_photo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
