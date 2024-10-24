@@ -688,6 +688,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     singularName: 'order';
     pluralName: 'orders';
     displayName: '\u0417\u0430\u043C\u043E\u0432\u043B\u0435\u043D\u043D\u044F';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -716,7 +717,9 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
         '\u041E\u0411\u0420\u041E\u0411\u041B\u042E\u0404\u0422\u042C\u0421\u042F',
         '\u0412\u0418\u041A\u041E\u041D\u0410\u041D\u041E',
       ]
-    >;
+    > &
+      Schema.Attribute.DefaultTo<'\u041E\u0411\u0420\u041E\u0411\u041B\u042E\u0404\u0422\u042C\u0421\u042F'>;
+    items: Schema.Attribute.Relation<'oneToMany', 'api::order-item.order-item'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -748,6 +751,7 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
     product: Schema.Attribute.Relation<'oneToOne', 'api::product.product'>;
     color: Schema.Attribute.Relation<'oneToOne', 'api::color.color'>;
     variant: Schema.Attribute.Relation<'oneToOne', 'api::variant.variant'>;
+    order: Schema.Attribute.Relation<'manyToOne', 'api::order.order'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

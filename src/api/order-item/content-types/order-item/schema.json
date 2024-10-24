@@ -41,6 +41,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::variant.variant"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "items"
     }
   }
 }

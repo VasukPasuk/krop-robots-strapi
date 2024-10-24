@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Замовлення"
+    "displayName": "Замовлення",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -81,7 +82,14 @@
       "enum": [
         "ОБРОБЛЮЄТЬСЯ",
         "ВИКОНАНО"
-      ]
+      ],
+      "default": "ОБРОБЛЮЄТЬСЯ"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item",
+      "mappedBy": "order"
     }
   }
 }
